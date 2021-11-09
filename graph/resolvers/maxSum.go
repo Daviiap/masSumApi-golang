@@ -2,7 +2,7 @@ package resolvers
 
 import "github.com/Daviiap/maxsum/graph/model"
 
-func getPossibleStartIndices(list []int) []int {
+func GetPossibleStartIndices(list []int) []int {
 	var possibleStartIndices []int
 
 	for i := 0; i < len(list); i++ {
@@ -20,7 +20,7 @@ func getPossibleStartIndices(list []int) []int {
 	return possibleStartIndices
 }
 
-func getMaxSumFromNonPositiveList(list []int) *model.MaxSumResponse {
+func GetMaxSumFromNonPositiveList(list []int) *model.MaxSumResponse {
 	sum := list[0]
 	position := 1
 
@@ -39,7 +39,7 @@ func getMaxSumFromNonPositiveList(list []int) *model.MaxSumResponse {
 	}
 }
 
-func getMaxSumFromPositiveList(list []int, possibleStartIndices []int) *model.MaxSumResponse {
+func GetMaxSumFromPositiveList(list []int, possibleStartIndices []int) *model.MaxSumResponse {
 	sum := 0
 	positions := []int{}
 
@@ -76,12 +76,12 @@ func getMaxSumFromPositiveList(list []int, possibleStartIndices []int) *model.Ma
 func MaxSumResolver(list []int) *model.MaxSumResponse {
 	var response model.MaxSumResponse
 
-	possibleStartIndices := getPossibleStartIndices(list)
+	possibleStartIndices := GetPossibleStartIndices(list)
 
 	if len(possibleStartIndices) > 0 {
-		response = *getMaxSumFromPositiveList(list, possibleStartIndices)
+		response = *GetMaxSumFromPositiveList(list, possibleStartIndices)
 	} else {
-		response = *getMaxSumFromNonPositiveList(list)
+		response = *GetMaxSumFromNonPositiveList(list)
 	}
 
 	return &response
