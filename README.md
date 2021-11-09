@@ -12,13 +12,9 @@ Para rodar o projeto diretamento no seu SO, basta rodar o comando:
 
 ```bash
 # modo de desenvolvimento:
-yarn && yarn dev
+go run server.go
 # modo de produção
-yarn \
-&& yarn build \
-&& rm -rf node_modules \
-&& yarn --production \
-&& yarn start
+go build server.go && ./server
 ```
 
 ### Usando Docker
@@ -26,23 +22,12 @@ yarn \
 Para rodar o projeto com o `Docker` basta ter o `docker` e o `docker-compose` instalados e rodar o comando:
 
 ```bash
-# modo de desenvolvimento:
-docker-compose -f docker-compose.dev.yaml up --build
 # modo de produção:
 docker-compose up --build
 ```
-
-## Testes
-
-Para rodar os testes, basta rodar o comando:
-
-```bash
-yarn test
-```
-
 ## Usando a API
 
-Uma vez rodando o projeto, ele irá rodar na porta `4000`. Basta acessar `http://localhost:4000` para abrir o playground do GraphQL.
+Uma vez rodando o projeto, ele irá rodar na porta `8080`. Basta acessar `http://localhost:8080` para abrir o playground do GraphQL.
 
 ### Request
 
