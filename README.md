@@ -25,13 +25,22 @@ Para rodar o projeto com o `Docker` basta ter o `docker` e o `docker-compose` in
 # modo de produção:
 docker-compose up --build
 ```
+
+## Testes
+
+Para rodar os testes, basta, de dentro da pasta `__tests__` rodar o comando:
+
+```bash
+go test 
+```
+
 ## Usando a API
 
 Uma vez rodando o projeto, ele irá rodar na porta `8080`. Basta acessar `http://localhost:8080` para abrir o playground do GraphQL.
 
 ### Request
 
-A api possui somente uma mutation `maxSuum`.
+A api possui somente uma mutation `maxSum`.
 
 #### `Exemplo`
 
