@@ -1,0 +1,9 @@
+version: "3.4"
+services:
+  maxsum-golang:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: maxsum-golang
+    ports:
+      - "8080:8080"

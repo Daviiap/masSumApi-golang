@@ -1,0 +1,12 @@
+type MaxSumResponse {
+	sum: Int!
+	positions: [Int!]!
+}
+
+type Query {
+	test: String!
+}
+
+type Mutation {
+	maxSum(list: [Int!]!): MaxSumResponse!
+}
